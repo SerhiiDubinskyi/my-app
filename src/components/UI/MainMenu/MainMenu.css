@@ -1,0 +1,56 @@
+.Menu
+{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.MenuItem
+/* ul li  */
+{
+  position: relative;
+  list-style: none;
+}
+.MenuItemLink
+/* ul li a */
+{
+  position: relative;
+  font-size: 1em;
+  text-decoration: none;
+  line-height: 1em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+}
+.MenuItemLink::before
+/* ul li a::before */
+{
+  content: attr(data-text);
+  position: absolute;
+  color: #a8e3a4;
+  width: 0%;
+  overflow: hidden;
+  transition: 1s;
+  border-right: #fff solid 8px;
+}
+.MenuItemLink:hover::before
+/* ul li a:hover::before */
+{
+  width: 100%;
+  /* border-right: #fff solid 0px; */
+
+  /* -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5); */
+  filter: drop-shadow(0 0 5px #a8e3a4);
+}
+
+.MenuItemLink::after
+/* ul li a::after */
+{
+  content: '\1F3E0'; 
+  font-size: 20px; 
+  color: #a8e3a4;
+  transition: 1s;
+  opacity: 0;
+}

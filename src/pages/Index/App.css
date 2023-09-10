@@ -1,0 +1,100 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
+* 
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  transition: background-color 1.5s ease-in;
+  background-color: #252839;
+  transform: translateY(100%); /* Сдвигаем элемент вниз на 100% от его высоты */
+  animation: slideFromBottom 1s ease forwards;
+}
+
+@keyframes slideFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.App
+{
+  /* width: 100vw; */
+  background-color: #252839;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul 
+{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+ul li 
+{
+  position: relative;
+  list-style: none;
+}
+ul li a
+{
+  position: relative;
+  font-size: 4em;
+  text-decoration: none;
+  line-height: 1em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+}
+ul li a::before
+{
+  content: attr(data-text);
+  position: absolute;
+  color: #a8e3a4;
+  width: 0%;
+  overflow: hidden;
+  transition: 1s;
+  border-right: #fff solid 8px;
+}
+
+ul li a:hover::before
+{
+  width: 100%;
+  /* border-right: #fff solid 0px; */
+
+  /* -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5); */
+  filter: drop-shadow(0 0 5px #a8e3a4);
+}
+
+
+ul li a::after {
+  content: '\1F3E0'; 
+  font-size: 20px; 
+  color: #a8e3a4;
+  transition: 1s;
+  opacity: 0;
+}
+
+ /* ul li a:hover::before {
+  width: 100%;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+} */
+/*
+ul li a:hover::after {
+  transition: 3s;
+  opacity: 1; 
+  border-right: width 0px;
+}  */
+
